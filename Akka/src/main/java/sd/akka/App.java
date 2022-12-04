@@ -8,10 +8,6 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.pattern.Patterns;
 import akka.routing.RoundRobinPool;
-import sd.akka.actor.ArbitreActor;
-import sd.akka.actor.HelloWorldActor;
-import sd.akka.actor.JourNuitActor;
-import sd.akka.actor.NombrePremierActor;
 import sd.akka.actor.RandomiserActor;
 
 public class App {
