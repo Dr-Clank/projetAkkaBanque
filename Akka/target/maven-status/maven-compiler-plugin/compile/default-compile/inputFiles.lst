@@ -1,8 +1,8 @@
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\actor\PingPongActor.java
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\actor\RandomiserActor.java
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\actor\ArbitreActor.java
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\actor\HelloWorldActor.java
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\actor\VenteActor.java
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\actor\JourNuitActor.java
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\App.java
-C:\Cours\Master1\SystemDistribue\projet\Akka\src\main\java\sd\akka\actor\NombrePremierActor.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Client.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Banquier.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\actor\RandomiserActor.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Banque.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\App.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\actor\BanqueActor.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Compte.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\actor\ClientActor.java

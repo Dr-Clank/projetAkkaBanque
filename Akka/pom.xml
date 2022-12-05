@@ -17,17 +17,36 @@
 		    <artifactId>akka-actor-typed_${scala.binary.version}</artifactId>
 		    <version>${akka.version}</version>
 		</dependency>
+		<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.31</version>
+        </dependency>
 	</dependencies>
 	<build>
-    	<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<mainClass>sd.akka.App</mainClass>
-				</configuration>
-			</plugin>
-    	</plugins>
-	</build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                   <execution>
+                      <goals>
+                         <goal>exec</goal>
+                      </goals>
+                   </execution>
+                </executions>
+                <configuration>
+                   <executable>java</executable>
+                   <workingDirectory>${project.build.directory}/exec-working-directory</workingDirectory>
+                   <arguments>
+                      <argument>-classpath</argument>
+                      <classpath />       
+                      <argument>sd.akka.App</argument>
+                   </arguments>
+                   <classpathScope>compile</classpathScope>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
