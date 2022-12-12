@@ -1,4 +1,1 @@
 sd\akka\App.class
-sd\akka\actor\RandomiserActor.class
-sd\akka\actor\RandomiserActor$Message.class
-sd\akka\actor\RandomiserActor$RandomiseString.class

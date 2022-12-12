@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.actor.Props;
 import akka.actor.ActorRef;
 import akka.pattern.Patterns;
+import sd.akka.model.*;
 
 import java.time.Duration;
 import java.util.Random;
@@ -11,56 +12,51 @@ import java.util.concurrent.CompletionStage;
 
 public class ClientActor extends AbstractActor {
     //acteur suivant
-    public ActorRef nextActor;
+    public Banque bank;
 
-    public int myRank;
-    public String myString;
+    public Client clientInfo;
 
 	// Méthode servant à déterminer le comportement de l'acteur 
     //lorsqu'il reçoit un message
     @Override
     public Receive createReceive(){
         return receiveBuilder()
-                .match(RandomiseString.class, message -> randomiseString(message))
+                .match(DemanderSolde.class,message -> demanderSolde())
+                .match(RecevoirSolde.class,message -> recevoirSolde(message))
                 .build();
     }
 
-    private ClientActor(int newRank){
-
-        this.myRank = newRank;
-        //si mon rang est 0 affiche, sinon envoie au prochain
-        if(newRank !=0){
-            this.nextActor = getContext().actorOf(RandomiserActor.props(newRank));
-        }
+    private ClientActor(Client clientInfo, Banque bank){
+        this.clientInfo = clientInfo;
+        this.bank = bank;
     }   
 
-    private void randomiseString(final RandomiseString message){
-       
-        
-        //System.out.println(message.messageToRandomise);
-        if(myRank !=0){
-            nextActor.forward(message,getContext()); //forward de mail
-        }else{
-            ActorRef actorRef = this.getSender(); //permet de récupéré l'émétteur INITIAL
-            actorRef.tell(message.messageToRandomise, getSelf()); //message, nous
-        }
-        //nextActor.tell(new RandomiserActor.RandomiseString(), this.getSelf());
-        //if forward, contient l'émétteur du message et permet d'utiliser "getSender()"
+    private void demanderSolde(){
+        this.bank.getBanqueActor().tell(new BanqueActor.GetSolde(this.clientInfo), getSelf());
     }
 
-    public static Props props(int nextRank) {
-        nextRank= nextRank-1;
-		return Props.create(RandomiserActor.class, nextRank);
+    private void recevoirSolde(final RecevoirSolde rs){
+        System.out.println("Client no "+this.clientInfo.getId()+" "+rs.montantRecus+"€");
+    }
+
+    public static Props props(Client clientInfo, Banque bank) {
+		return Props.create(ClientActor.class, clientInfo, bank);
 	}
 
     // Définition des messages en inner classes
 	public interface Message {}
 	
     //Va randomiser une lettre
-	public static class RandomiseString implements Message {
-        public String messageToRandomise;
-		public RandomiseString(String messageToRandomise) {
-            this.messageToRandomise = messageToRandomise;
+	public static class DemanderSolde implements Message {
+		public DemanderSolde() {
+        }
+	}
+
+    //Va randomiser une lettre
+	public static class RecevoirSolde implements Message {
+        public float montantRecus;
+		public RecevoirSolde(float montant ) {
+            this.montantRecus = montant;
         }
 	}
 }

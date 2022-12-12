@@ -1,8 +1,9 @@
 C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Client.java
 C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Banquier.java
-C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\actor\RandomiserActor.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\sql\ConnectMySql.java
 C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Banque.java
 C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\App.java
 C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\actor\BanqueActor.java
+C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\actor\BanquierActor.java
 C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\model\Compte.java
 C:\Cours\Master1\SystemDistribue\projetAkkaBanque\Akka\src\main\java\sd\akka\actor\ClientActor.java
